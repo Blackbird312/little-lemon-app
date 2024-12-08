@@ -1,6 +1,6 @@
 import { Colors } from '@/constants/Colors';
 import React from 'react';
-import { ScrollView, Text, StyleSheet, TextInput, View, Pressable} from 'react-native';
+import { ScrollView, Text, StyleSheet, TextInput, View, Pressable, useColorScheme} from 'react-native';
 
 export default function LoginForm() {
 
@@ -8,7 +8,7 @@ export default function LoginForm() {
     email:"Mohammed",
     password:"1234"
   }
-
+  const colorScheme = useColorScheme();
   const [email, setEmail] = React.useState<string>('')
   const [password, setPassword] = React.useState<string>('')
   const [isLoggedIn, setIsLoggedIn] = React.useState<boolean>(false)
@@ -18,7 +18,7 @@ export default function LoginForm() {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={{ ...styles.container, backgroundColor: colorScheme === 'dark' ? Colors.dark.background : Colors.light.background }}>
       <Text style={styles.headerText}>Welcome to Little Lemon</Text>
       {isLoggedIn 
       ?<Text style={styles.regularText}>You are logged in ! </Text>

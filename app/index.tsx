@@ -1,6 +1,6 @@
 import FlatListMenu from "@/components/FlatListMenu";
-import LoginForm from "@/components/LoginForm";
-import SectionListMenu from "@/components/SectionListMenu";
+import LoginForm from "@/app/LoginForm";
+import SectionListMenu from "@/app/SectionListMenu";
 import WelcomeScrollView from "@/components/WelcomeScrollView";
 import { Colors } from "@/constants/Colors";
 import { ScrollView, StyleSheet, Text, useColorScheme, View } from "react-native";
@@ -11,17 +11,14 @@ export default function Index() {
 
   return (
     <View style={{...Styles.container,backgroundColor: colorScheme === 'dark' ? Colors.dark.background : Colors.light.background}}>
-      {/* <LoginForm/> */}
-      {/* <WelcomeScrollView/> */}
-      {/* <FlatListMenu/> */}
-      <SectionListMenu/>
+      <WelcomeScrollView/>
     </View>
   );
 }
 
 const Styles = StyleSheet.create({
   container: {
-    flex: 1, 
+    flex: 1,
     padding:20,
   },
   title : {
