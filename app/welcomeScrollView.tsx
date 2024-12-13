@@ -1,15 +1,14 @@
-import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, useColorScheme, View } from 'react-native'
 import React from 'react'
 import { Colors } from "../constants/Colors"
 
 const WelcomeScrollView = () => {
 
-  
-
   const handleNavigation = () => console.log("go to manu screen")
+  const colorScheme = useColorScheme();
 
   return (
-    <>
+    <View style={{...Styles.container,backgroundColor: colorScheme === 'dark' ? Colors.dark.background : Colors.light.background}}>
       <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
         <Image
           source={require('../assets/images/lemon-logo.png')}
@@ -41,7 +40,8 @@ const WelcomeScrollView = () => {
         <TouchableOpacity style={{ ...Styles.btn }}>
           <Text style={{ textAlign: "center" }}>go to manu screen</Text>
         </TouchableOpacity>
-      </ScrollView></>
+      </ScrollView>
+      </View>
   )
 }
 
@@ -50,6 +50,7 @@ export default WelcomeScrollView
 const Styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding:20,
     backgroundColor: Colors.app.primary
   },
   title: {
