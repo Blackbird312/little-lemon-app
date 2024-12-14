@@ -9,7 +9,7 @@ export default function RootLayout() {
     <>
       <StatusBar style="auto" />
       <LittleLemonHeader />
-      <Stack screenOptions={{ headerShown: false }} initialRouteName="index" />
+      <Stack screenOptions={{ headerShown: false }} initialRouteName="(tabs)" />
       <LittleLemonFooter />
     </>
   );
